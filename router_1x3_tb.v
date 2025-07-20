@@ -71,61 +71,61 @@ module router_1x3_tb();
         initialise;
 
         rst_task;
-		  fork
-        data(25, 2'b00);
-			begin
-				wait(valid_out_0);#200;
-				read_enb_0=1;
-				wait(~valid_out_0);
-				read_enb_0=0;
+	  fork
+	  data(25, 2'b00);
+		begin
+		wait(valid_out_0);#200;
+		read_enb_0=1;
+		wait(~valid_out_0);
+		read_enb_0=0;
            end
         join
         rst_task;
 		  
-		  fork
-        data(10, 2'b10);
-			begin
-				wait(valid_out_2);#20;
-				read_enb_2=1;
-				wait(~valid_out_2);
-				read_enb_2=0;
-           end
+	  fork
+	  data(10, 2'b10);
+		begin
+			wait(valid_out_2);#20;
+			read_enb_2=1;
+			wait(~valid_out_2);
+			read_enb_2=0;
+          	end
         join
 		 
 
         rst_task;
-		  fork
-        data(8, 2'b01);
-			begin
-				wait(valid_out_1);
-				read_enb_1=1;
-				wait(~valid_out_1);
-				read_enb_1=0;
-           end
+	  fork
+	  data(8, 2'b01);
+		begin
+			wait(valid_out_1);
+			read_enb_1=1;
+			wait(~valid_out_1);
+			read_enb_1=0;
+          	end
         join
 		  
         
         rst_task;
-		  fork
+	fork
         data(16, 2'b10);
-			begin
-				wait(valid_out_2);
-				#10;
-				read_enb_2=1;
-				wait(~valid_out_2);
-				read_enb_2=0;
-           end
+		begin
+			wait(valid_out_2);
+			#10;
+			read_enb_2=1;
+			wait(~valid_out_2);
+			read_enb_2=0;
+           	end
         join
 
         rst_task;
-		  fork
+	fork
         data(12, 2'b00);
-			begin
-				wait(valid_out_0);
-				read_enb_0=1;
-				wait(~valid_out_0);
-				read_enb_0=0;
-           end
+		begin
+			wait(valid_out_0);
+			read_enb_0=1;
+			wait(~valid_out_0);
+			read_enb_0=0;
+         	end
         join
         
 
