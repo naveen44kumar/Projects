@@ -10,18 +10,9 @@ module router_fifo(clock,resetn,soft_reset,write_enb,read_enb,lfd_state,data_in,
     reg lfd_temp;
     integer i;
     
-    assign full=(wr_pointer==5'd16 && rd_pointer==5'd0)?1'b1:1'b0;
+	 assign full=(wr_pointer==5'd16 && rd_pointer==5'd0)?1'b1:1'b0;
     assign empty=(wr_pointer==rd_pointer)?1'b1:1'b0;
-
-    always@(posedge clock)
-        begin
-            if(resetn==1'b0)
-                lfd_temp<=1'b0;
-            else if(soft_reset)
-                lfd_temp<=1'b0;
-            else
-                lfd_temp<=lfd_state;
-        end
+	 
     always@(posedge clock)
         begin
             if(resetn==1'b0)
@@ -40,6 +31,16 @@ module router_fifo(clock,resetn,soft_reset,write_enb,read_enb,lfd_state,data_in,
                     mem[wr_pointer[3:0]]<={lfd_temp,data_in};
                     wr_pointer<=wr_pointer+1;
                 end
+        end
+		  
+    always@(posedge clock)
+        begin
+            if(resetn==1'b0)
+                lfd_temp<=1'b0;
+            else if(soft_reset)
+                lfd_temp<=1'b0;
+            else
+                lfd_temp<=lfd_state;
         end
 		  
 		  
