@@ -15,7 +15,10 @@ module router_fsm(
 		load_after_full = 3'b110,
 		wait_till_empty = 3'b111;
 		
-		
+	
+	reg [2:0] p_s, n_s;
+	
+	
 	assign detect_add = (p_s == decode_addr);
 	assign ld_state = (p_s == load_data);
 	assign laf_state = (p_s == load_after_full);
@@ -26,7 +29,6 @@ module router_fsm(
 	assign busy = (p_s == load_first_data) || (p_s == load_parity) || (p_s == check_parity_error) || (p_s == fifo_full_state) || (p_s == load_after_full) || (p_s == wait_till_empty);
 	assign write_enb_reg = (p_s == load_data) || (p_s == load_parity) || (p_s == load_after_full);
 	
-	reg [2:0] p_s, n_s;
 	
 	reg [1:0]addr;
 	always@(posedge clock)
@@ -120,5 +122,5 @@ module router_fsm(
 
 		endcase
 	end
-
+	
 endmodule
