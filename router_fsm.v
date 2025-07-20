@@ -9,11 +9,11 @@ module router_fsm(
 	parameter decode_addr = 3'b000,
 		load_first_data = 3'b001,
 		load_data = 3'b010,
-		LOAD_PARITY = 3'b011,
+		load_parity = 3'b011,
 		check_parity_error = 3'b100,
 		fifo_full_state = 3'b101,
 		load_after_full = 3'b110,
-		WAIT_TILL_EMPTY = 3'b111;
+		wait_till_empty = 3'b111;
 		
 		
 	assign detect_add = (p_s == decode_addr);
@@ -23,8 +23,8 @@ module router_fsm(
 	assign rst_int_reg = (p_s == check_parity_error);
 	assign lfd_state = (p_s == load_first_data);
 	
-	assign busy = (p_s == load_first_data) || (p_s == LOAD_PARITY) || (p_s == check_parity_error) || (p_s == fifo_full_state) || (p_s == load_after_full) || (p_s == WAIT_TILL_EMPTY);
-	assign write_enb_reg = (p_s == load_data) || (p_s == LOAD_PARITY) || (p_s == load_after_full);
+	assign busy = (p_s == load_first_data) || (p_s == load_parity) || (p_s == check_parity_error) || (p_s == fifo_full_state) || (p_s == load_after_full) || (p_s == wait_till_empty);
+	assign write_enb_reg = (p_s == load_data) || (p_s == load_parity) || (p_s == load_after_full);
 	
 	reg [2:0] p_s, n_s;
 	
@@ -61,7 +61,7 @@ module router_fsm(
 				else if ((pkt_valid && (data_in == 2'd0) && !fifo_empty_0) ||
 							(pkt_valid && (data_in == 2'd1) && !fifo_empty_1) ||
 							(pkt_valid && (data_in == 2'd2) && !fifo_empty_2))
-					n_s = WAIT_TILL_EMPTY;
+					n_s = wait_till_empty;
 				else
 					n_s = decode_addr;
 			end
@@ -71,14 +71,14 @@ module router_fsm(
 			load_data:
 			begin
 				if(!fifo_full && !pkt_valid)
-					n_s = LOAD_PARITY;
+					n_s = load_parity;
 				else if(fifo_full)
 					n_s = fifo_full_state;
 				else
 					n_s = load_data;
 			end
 
-			LOAD_PARITY: n_s = check_parity_error;
+			load_parity: n_s = check_parity_error;
 
 			check_parity_error:
 			begin
@@ -99,7 +99,7 @@ module router_fsm(
 			load_after_full:
 			begin
 				if(!parity_done && low_pkt_valid)
-					n_s = LOAD_PARITY;
+					n_s = load_parity;
 				else if(parity_done)
 					n_s = decode_addr;
 				else if(!parity_done && !low_pkt_valid)
@@ -108,14 +108,14 @@ module router_fsm(
 					n_s = load_after_full;
 			end
 
-			WAIT_TILL_EMPTY:
+			wait_till_empty:
 			begin
 				if((fifo_empty_0 && w1 == 2'd0) ||
 					(fifo_empty_1 && w1 == 2'd1) ||
 					(fifo_empty_2 && w1 == 2'd2))
 					n_s = load_first_data;
 				else
-					n_s = WAIT_TILL_EMPTY;
+					n_s = wait_till_empty;
 			end
 
 		endcase
