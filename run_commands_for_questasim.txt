@@ -1,0 +1,26 @@
+# 1️⃣ Compile UVM package
+vlog +acc +incdir+"C:/questasim64_2024.1/uvm-1.2/src" +define+UVM_NO_DPI \
+     "C:/questasim64_2024.1/uvm-1.2/src/uvm_pkg.sv"
+
+# 2️⃣ Compile router package
+vlog -sv +incdir+"D:/projects-sv/router" \
+     D:/projects-sv/router/router_pkg.sv
+
+# 3️⃣ Compile interfaces
+vlog -sv +incdir+"D:/projects-sv/router" \
+     D:/projects-sv/router/router_if.sv
+
+# 4️⃣ Compile RTL modules
+vlog -sv +incdir+"D:/projects-sv/router" \
+     D:/projects-sv/router/router_sync.v \
+     D:/projects-sv/router/router_reg.v \
+     D:/projects-sv/router/router_fifo.v \
+     D:/projects-sv/router/router_fsm.v \
+     D:/projects-sv/router/router_1x3.v
+
+# 5️⃣ Compile testbench components
+vlog -sv +incdir+"D:/projects-sv/router" \
+     D:/projects-sv/router/testbench.sv
+
+# 6️⃣ Simulate with coverage and accessibility
+vsim -voptargs=+acc+cover work.top -do "log -r /*; run -all; coverage save -onexit router_cov.ucdb;"
