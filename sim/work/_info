@@ -1,0 +1,143 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2024.1 2024.02, Feb  1 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/rnave/OneDrive/Desktop/axi_verf/sim
+T_opt
+!s11d axi_pkg C:/Users/rnave/OneDrive/Desktop/axi_verf/sim/work 1 axi 1 C:/Users/rnave/OneDrive/Desktop/axi_verf/sim/work 
+!s11d uvm_pkg C:/questasim64_2024.1/uvm-1.1d 1 axi 1 C:/Users/rnave/OneDrive/Desktop/axi_verf/sim/work 
+!s110 1776524354
+VBBH_4IbK2GK`EFMC`0[eW3
+04 3 4 work top fast 0
+=1-24b2b9c61e53-69e39c40-29d-1ef4
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.1;79
+Yaxi
+Z3 2../axi_if/axi_if.sv|../test/axi_pkg.sv|../top/axi_top.sv
+Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z5 !s110 1776524350
+!i10b 1
+!s100 YM1_haBX:6`4Rfaf@`mFB1
+IR1mf?BZVdlXbCC=R054FS1
+S1
+R1
+w1776404354
+8../axi_if/axi_if.sv
+F../axi_if/axi_if.sv
+!i122 0
+Z6 L0 1 0
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2024.1;79
+r1
+!s85 0
+31
+Z9 !s108 1776524350.000000
+Z10 !s107 ../test/axi_test_lib.sv|../test/virtual_sequence.sv|../axi_master/master_sequence.sv|../tb/env.sv|../tb/virtual_sequencer.sv|../tb/score_board.sv|../axi_slave/slave_agent_top.sv|../axi_master/master_agent_top.sv|../axi_slave/slave_agent.sv|../axi_master/master_agent.sv|../axi_slave/slave_sequencer.sv|../axi_slave/slave_monitor.sv|../axi_slave/slave_driver.sv|../axi_master/master_sequencer.sv|../axi_master/master_monitor.sv|../axi_master/master_driver.sv|../tb/axi_config.sv|../axi_slave/slave_config.sv|../axi_master/master_config.sv|../tb/axi_xtn.sv|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../top/axi_top.sv|../test/axi_pkg.sv|../axi_if/axi_if.sv|
+Z11 !s90 -work|work|../axi_if/axi_if.sv|+incdir+../tb|+incdir+../test|+incdir+../axi_master|+incdir+../axi_slave|../test/axi_pkg.sv|../top/axi_top.sv|
+!i113 0
+Z12 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 !s92 -work work +incdir+../tb +incdir+../test +incdir+../axi_master +incdir+../axi_slave -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+Xaxi_pkg
+!i114 1
+R3
+!s115 axi
+R4
+Z14 DXx6 mtiUvm 7 uvm_pkg 0 22 MiVhEBb9cnBN5^J=<XBKI2
+R5
+!i10b 1
+!s100 VLXQ`JA5l53[e]iV=WcBH0
+IK`0mnfC:fPW[oKQ@QmTR43
+S1
+R1
+w1776524273
+8../test/axi_pkg.sv
+F../test/axi_pkg.sv
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+FC:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+F../tb/axi_xtn.sv
+F../axi_master/master_config.sv
+F../axi_slave/slave_config.sv
+F../tb/axi_config.sv
+F../axi_master/master_driver.sv
+F../axi_master/master_monitor.sv
+F../axi_master/master_sequencer.sv
+F../axi_slave/slave_driver.sv
+F../axi_slave/slave_monitor.sv
+F../axi_slave/slave_sequencer.sv
+F../axi_master/master_agent.sv
+F../axi_slave/slave_agent.sv
+F../axi_master/master_agent_top.sv
+F../axi_slave/slave_agent_top.sv
+F../tb/score_board.sv
+F../tb/virtual_sequencer.sv
+F../tb/env.sv
+F../axi_master/master_sequence.sv
+F../test/virtual_sequence.sv
+F../test/axi_test_lib.sv
+!i122 0
+R6
+VK`0mnfC:fPW[oKQ@QmTR43
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vtop
+R3
+R4
+R14
+DXx4 work 7 axi_pkg 0 22 K`0mnfC:fPW[oKQ@QmTR43
+R5
+!i10b 1
+!s100 P[bd^N4?WAF9AgAQlEXE`3
+IN9D5kH;OBDVPzH1<:]0H43
+S1
+R1
+w1776405509
+8../top/axi_top.sv
+F../top/axi_top.sv
+!i122 0
+L0 1 18
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
